@@ -95,6 +95,7 @@ class _Play4optionsWidgetState extends State<Play4optionsWidget>
         answerIsRight: FFAppState().problemInfo.isRight,
         referenceID: FFAppState().problemInfo.referenceID,
         problemCycle: FFAppState().problemInfo.problemCycle,
+        userID: FFAppState().userID,
       ));
       _model.newLog = ProblemLogsRecord.getDocumentFromData(
           createProblemLogsRecordData(
@@ -116,6 +117,7 @@ class _Play4optionsWidgetState extends State<Play4optionsWidget>
             answerIsRight: FFAppState().problemInfo.isRight,
             referenceID: FFAppState().problemInfo.referenceID,
             problemCycle: FFAppState().problemInfo.problemCycle,
+            userID: FFAppState().userID,
           ),
           problemLogsRecordReference);
     });
@@ -208,13 +210,54 @@ class _Play4optionsWidgetState extends State<Play4optionsWidget>
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(0.0),
                         child: Image.asset(
-                          'assets/images/iPad_Pro_12.9in__82.png',
+                          'assets/images/background.png',
                           width: 300.0,
                           height: 200.0,
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
+                    Align(
+                        alignment: AlignmentDirectional(0.0, -1.0),
+                        child: Padding(
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(0.0, 30, 0.0, 0.0),
+                          child: Container(
+                            width: double.infinity,
+                            height: 105,
+                            decoration: BoxDecoration(),
+                            child: Stack(children: [
+                              Align(
+                                alignment: AlignmentDirectional(0.0, 0.0),
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    child: Image.asset(
+                                      'assets/images/Group_6094.png',
+                                      width: double.infinity,
+                                      height: double.infinity,
+                                      fit: BoxFit.contain,
+                                    )),
+                              ),
+                              // Right or Wrong Question widget and alignment
+                              Align(
+                                alignment: AlignmentDirectional(0, 0),
+                                child: Text(
+                                  'Is the order right or wrong?',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Comic Sans',
+                                        color: Color(0xFF4D4D4D),
+                                        fontSize: 34.0,
+                                        fontWeight: FontWeight.bold,
+                                        useGoogleFonts: false,
+                                      ),
+                                ),
+                              ),
+                            ]),
+                          ),
+                        )),
                     Align(
                       alignment: AlignmentDirectional(0.0, 1.0),
                       child: Padding(
@@ -607,7 +650,7 @@ class _Play4optionsWidgetState extends State<Play4optionsWidget>
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.asset(
-                            'assets/images/Asset_2.png',
+                            'assets/images/${FFAppState().curAnimal}.png',
                             width: 300.0,
                             height: 200.0,
                             fit: BoxFit.contain,
@@ -624,7 +667,7 @@ class _Play4optionsWidgetState extends State<Play4optionsWidget>
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: Image.asset(
-                            'assets/images/Asset_1.png',
+                            'assets/images/${FFAppState().curAnimal2}.png',
                             width: 300.0,
                             height: 300.0,
                             fit: BoxFit.contain,

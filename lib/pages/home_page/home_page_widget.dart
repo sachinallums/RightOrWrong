@@ -189,6 +189,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           numQuestionsAnswered: 0,
                                           sessionResponseTime: 0.0,
                                           startTime: getCurrentTimestamp,
+                                          userID: FFAppState().userID,
                                         ));
                                         _model.sessionDocumentReference =
                                             GameSessionDataRecord.getDocumentFromData(
@@ -199,6 +200,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   sessionResponseTime: 0.0,
                                                   startTime:
                                                       getCurrentTimestamp,
+                                                  userID: FFAppState().userID,
                                                 ),
                                                 gameSessionDataRecordReference);
                                         setState(() {
@@ -209,7 +211,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               FFAppState()
                                                   .sessionQuestions
                                                   .length;
-                                          FFAppState().curProblemIndex = 0;
+                                          // FFAppState().curProblemIndex = 0;
                                         });
 
                                         context.pushNamed(
@@ -224,8 +226,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             ),
                                           },
                                         );
-
-                                        setState(() {});
                                       },
                                       text: 'Play',
                                       options: FFButtonOptions(
@@ -270,7 +270,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.asset(
-                              'assets/images/Asset_1.png',
+                              'assets/images/${FFAppState().curAnimal}.png',
                               width: 300.0,
                               height: 200.0,
                               fit: BoxFit.contain,

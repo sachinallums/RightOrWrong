@@ -60,7 +60,7 @@ class _PlayFinishWidgetState extends State<PlayFinishWidget> {
                     'assets/images/Intro_1_Lets_get_started__3.png',
                     width: 300.0,
                     height: 200.0,
-                    fit: BoxFit.contain,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
@@ -73,7 +73,7 @@ class _PlayFinishWidgetState extends State<PlayFinishWidget> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(
-                      'assets/images/Asset_1.png',
+                      'assets/images/${FFAppState().curAnimal}.png',
                       width: 300.0,
                       height: 200.0,
                       fit: BoxFit.contain,
@@ -121,14 +121,15 @@ class _PlayFinishWidgetState extends State<PlayFinishWidget> {
                         return FFButtonWidget(
                           onPressed: () async {
                             context.pushNamed('HomePage');
+                            var inputAccuracy = functions.getAccuracy(
+                                buttonGameSessionDataRecord!.numCorrect,
+                                buttonGameSessionDataRecord
+                                    .numQuestionsAnswered);
 
                             await FFAppState()
                                 .sessionParentReference!
                                 .update(createGameSessionDataRecordData(
-                                  accuracy: functions.getAccuracy(
-                                      buttonGameSessionDataRecord!.numCorrect,
-                                      buttonGameSessionDataRecord!
-                                          .numQuestionsAnswered),
+                                  accuracy: inputAccuracy,
                                 ));
                           },
                           text: 'Continue',

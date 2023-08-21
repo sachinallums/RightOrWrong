@@ -146,7 +146,7 @@ class _Demo3WidgetState extends State<Demo3Widget>
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(
-                      'assets/images/Asset_2.png',
+                      'assets/images/${FFAppState().curAnimal}.png',
                       width: 300.0,
                       height: 200.0,
                       fit: BoxFit.contain,
@@ -163,7 +163,7 @@ class _Demo3WidgetState extends State<Demo3Widget>
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(
-                      'assets/images/Asset_1.png',
+                      'assets/images/${FFAppState().curAnimal2}.png',
                       width: 300.0,
                       height: 300.0,
                       fit: BoxFit.contain,

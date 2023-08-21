@@ -73,7 +73,7 @@ class _Demo4WidgetState extends State<Demo4Widget> {
                     'assets/images/Feedback_Correct__13.png',
                     width: 300.0,
                     height: 200.0,
-                    fit: BoxFit.contain,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
@@ -86,7 +86,7 @@ class _Demo4WidgetState extends State<Demo4Widget> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(
-                      'assets/images/Asset_1.png',
+                      'assets/images/${FFAppState().curAnimal2}.png',
                       width: 300.0,
                       height: 200.0,
                       fit: BoxFit.contain,

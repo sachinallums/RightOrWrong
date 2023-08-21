@@ -118,7 +118,7 @@ class _DemoFinishWidgetState extends State<DemoFinishWidget> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(
-                      'assets/images/Asset_1.png',
+                      'assets/images/${FFAppState().curAnimal}.png',
                       width: 300.0,
                       height: 200.0,
                       fit: BoxFit.contain,

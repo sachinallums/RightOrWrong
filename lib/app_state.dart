@@ -107,7 +107,7 @@ class FFAppState extends ChangeNotifier {
     _answeredQuestion = _value;
   }
 
-  int _curLevel = 3;
+  int _curLevel = 2;
   int get curLevel => _curLevel;
   set curLevel(int _value) {
     _curLevel = _value;
@@ -138,10 +138,28 @@ class FFAppState extends ChangeNotifier {
     prefs.setInt('ff_curProblemIndex', _value);
   }
 
-  int _desiredTrialNum = 6;
+  int _desiredTrialNum = 26;
   int get desiredTrialNum => _desiredTrialNum;
   set desiredTrialNum(int _value) {
     _desiredTrialNum = _value;
+  }
+
+  String _userID = "testing";
+  String get userID => _userID;
+  set userID(String _value) {
+    _userID = _value;
+  }
+
+  String _curAnimal = "Asset3";
+  String get curAnimal => _curAnimal;
+  set curAnimal(String _value) {
+    _curAnimal = _value;
+  }
+
+  String _curAnimal2 = "Asset4";
+  String get curAnimal2 => _curAnimal2;
+  set curAnimal2(String _value) {
+    _curAnimal2 = _value;
   }
 }
 

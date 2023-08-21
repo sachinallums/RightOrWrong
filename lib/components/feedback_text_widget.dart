@@ -64,7 +64,7 @@ class _FeedbackTextWidgetState extends State<FeedbackTextWidget> {
               Align(
                 alignment: AlignmentDirectional(0.0, 0.0),
                 child: Text(
-                  'Nice Job! Click anywhere to continue.',
+                  'Nice Job! \nClick anywhere to continue.',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Comic Sans',

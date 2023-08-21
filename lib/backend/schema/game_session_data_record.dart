@@ -21,6 +21,11 @@ class GameSessionDataRecord extends FirestoreRecord {
   double get accuracy => _accuracy ?? 0.0;
   bool hasAccuracy() => _accuracy != null;
 
+  // "userID" field.
+  String? _userID;
+  String get userID => _userID ?? "";
+  bool hasUserID() => _userID != null;
+
   // "numCorrect" field.
   int? _numCorrect;
   int get numCorrect => _numCorrect ?? 0;
@@ -91,6 +96,7 @@ Map<String, dynamic> createGameSessionDataRecordData({
   int? numQuestionsAnswered,
   double? sessionResponseTime,
   DateTime? startTime,
+  String? userID,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -99,6 +105,7 @@ Map<String, dynamic> createGameSessionDataRecordData({
       'numQuestionsAnswered': numQuestionsAnswered,
       'sessionResponseTime': sessionResponseTime,
       'startTime': startTime,
+      'userID': userID,
     }.withoutNulls,
   );
 
@@ -115,7 +122,8 @@ class GameSessionDataRecordDocumentEquality
         e1?.numCorrect == e2?.numCorrect &&
         e1?.numQuestionsAnswered == e2?.numQuestionsAnswered &&
         e1?.sessionResponseTime == e2?.sessionResponseTime &&
-        e1?.startTime == e2?.startTime;
+        e1?.startTime == e2?.startTime &&
+        e1?.userID == e2?.userID;
   }
 
   @override
@@ -124,7 +132,8 @@ class GameSessionDataRecordDocumentEquality
         e?.numCorrect,
         e?.numQuestionsAnswered,
         e?.sessionResponseTime,
-        e?.startTime
+        e?.startTime,
+        e?.userID,
       ]);
 
   @override

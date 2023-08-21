@@ -9,6 +9,10 @@ import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 class ProblemLogsRecord extends FirestoreRecord {
+  String? _userID;
+  String get userID => _userID ?? "";
+  bool hasUserID() => _userID != null;
+
   ProblemLogsRecord._(
     DocumentReference reference,
     Map<String, dynamic> data,
@@ -139,6 +143,7 @@ class ProblemLogsRecord extends FirestoreRecord {
     _problemOptions = castToType<int>(snapshotData['problemOptions']);
     _referenceID = snapshotData['referenceID'] as String?;
     _problemLevel = castToType<int>(snapshotData['problemLevel']);
+    _userID = castToType<String>(snapshotData['userID']);
   }
 
   static Query<Map<String, dynamic>> collection([DocumentReference? parent]) =>
@@ -201,6 +206,7 @@ Map<String, dynamic> createProblemLogsRecordData({
   int? problemOptions,
   String? referenceID,
   int? problemLevel,
+  String? userID,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -224,6 +230,7 @@ Map<String, dynamic> createProblemLogsRecordData({
       'problemOptions': problemOptions,
       'referenceID': referenceID,
       'problemLevel': problemLevel,
+      'userID': userID,
     }.withoutNulls,
   );
 
@@ -254,7 +261,8 @@ class ProblemLogsRecordDocumentEquality implements Equality<ProblemLogsRecord> {
         e1?.problemID == e2?.problemID &&
         e1?.problemOptions == e2?.problemOptions &&
         e1?.referenceID == e2?.referenceID &&
-        e1?.problemLevel == e2?.problemLevel;
+        e1?.problemLevel == e2?.problemLevel &&
+        e1?.userID == e2?.userID;
   }
 
   @override
@@ -278,7 +286,8 @@ class ProblemLogsRecordDocumentEquality implements Equality<ProblemLogsRecord> {
         e?.problemID,
         e?.problemOptions,
         e?.referenceID,
-        e?.problemLevel
+        e?.problemLevel,
+        e?.userID
       ]);
 
   @override
