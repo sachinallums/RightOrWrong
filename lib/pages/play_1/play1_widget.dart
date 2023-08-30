@@ -30,11 +30,12 @@ class _Play1WidgetState extends State<Play1Widget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if ((FFAppState().curProblemIndex == FFAppState().numInitialQuestions) &&
-          ((functions.getAccuracy(FFAppState().numCorrect,
+      if (((FFAppState().curProblemIndex == FFAppState().numInitialQuestions) &&
+              (functions.getAccuracy(FFAppState().numCorrect,
                       FFAppState().numInitialQuestions) >
-                  .8) ||
-              FFAppState().curLevel == 3)) {
+                  .8) &&
+              FFAppState().curLevel != 6) ||
+          FFAppState().curCycle == 3) {
         setState(() {
           FFAppState().curLevel = FFAppState().curLevel + 1;
           FFAppState().curCycle = 1;

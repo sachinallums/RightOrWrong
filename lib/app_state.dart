@@ -131,6 +131,18 @@ class FFAppState extends ChangeNotifier {
     _numTrialsDone = _value;
   }
 
+  int _totalSessionQuestionsAnswered = 0;
+  int get totalSessionQuestionsAnswered => _totalSessionQuestionsAnswered;
+  set totalSessionQuestionsAnswered(int _value) {
+    _totalSessionQuestionsAnswered = _value;
+  }
+
+  int _totalSessionNumCorrect = 0;
+  int get totalSessionNumCorrect => _totalSessionNumCorrect;
+  set totalSessionNumCorrect(int _value) {
+    _totalSessionNumCorrect = _value;
+  }
+
   int _curProblemIndex = 0;
   int get curProblemIndex => _curProblemIndex;
   set curProblemIndex(int _value) {
@@ -138,7 +150,7 @@ class FFAppState extends ChangeNotifier {
     prefs.setInt('ff_curProblemIndex', _value);
   }
 
-  int _desiredTrialNum = 26;
+  int _desiredTrialNum = 9;
   int get desiredTrialNum => _desiredTrialNum;
   set desiredTrialNum(int _value) {
     _desiredTrialNum = _value;
